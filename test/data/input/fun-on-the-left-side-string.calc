@@ -1,0 +1,6 @@
+f = fun(x) { fun(y) { x + y } },
+f("string")(3) = 8,
+f(2)("string") = 9,
+write(f("string")(3)), #  8 
+write(f("string")(4)), # "string4"
+write(f(2)("string")) # 9  

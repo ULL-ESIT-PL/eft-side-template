@@ -1,0 +1,115 @@
+#!/bin/bash
+
+# Examples
+# t.sh echo test-name 
+#   # prints the contents of test/data/input/test-test-name.calc
+# t.sh ready test-name
+#   # executes 
+    # if bin/calc2js.mjs test/data/input/test"$1".calc -o test/data/expectedjs/correct"$1".js; then
+    # and then executes
+    # node test/data/expectedjs/correct"$1".js > test/data/expectedout/correct-out"$1".txt
+    #if there are errors echoes the errors
+# t.sh check test-name
+#   # executes check.sh test-name
+# t.sh ready-add test-name
+#   # executes ready-add.sh test-name
+
+
+COMMAND=$1
+if [ -z "$COMMAND" ]; then
+  COMMAND=help
+fi
+shift
+if [ -z "$1" ]; then
+  COMMAND=help
+fi
+# if command is help, don't  show the matches
+if [ "$COMMAND" != "help" ]; then
+  echo "Command: $COMMAND"
+  MATCHES=$(ls test/data/input/*"$1"*)
+  echo "Processing files [$MATCHES]"
+fi
+case $COMMAND in
+  echo)
+    # Search for files matching "$1" in test/data/input/
+    if [ -z "$MATCHES" ]; then
+      echo "No matches for $1"
+      exit 1
+    fi
+    for file in $MATCHES; do
+      echo File: $file
+      cat -n $file
+      echo
+    done
+    exit 0
+    ;;
+  ready)
+    for file in $MATCHES; do
+       # output file is obtained from $file by replacing test/data/input/ with test/data/expectedjs/ and .calc with .js
+      output=$(echo $file | sed 's/test\/data\/input/test\/data\/expectedjs/' | sed 's/\.calc/\.js/') 
+      echo "bin/calc2js.mjs $file -o $output"
+      if bin/calc2js.mjs $file -o $output; then
+        # output text file is obtained from $file by replacing test/data/input/ with test/data/expectedout/ and .calc with -out.txt
+        outputTxt=$(echo $file | sed 's/test\/data\/input/test\/data\/expectedout/' | sed 's/\.calc/-out.txt/')
+        echo "node $output > $outputTxt"
+        node $output > $outputTxt
+        echo "Now add an entry for $MATCHES in 'test/test-description.mjs' like this one:"
+        # input file is obtained from $file by replacing test/data/input/ with the empty string
+        inputFile=$(echo $file | sed 's/test\/data\/input\///')
+        # actualjs file is obtained from $file by replacing test/data/input/ with the empty string and .calc with .js
+        actualjs=$(echo $file | sed 's/test\/data\/input\///' | sed 's/\.calc/\.js/')
+        expectedjs=$(echo $file | sed 's/test\/data\/input\///' | sed 's/\.calc/\.js/')
+        expectedout=$(echo $file | sed 's/test\/data\/input\///' | sed 's/\.calc/-out.txt/')
+        echo "
+{ 
+  input: \"$inputFile\",
+  actualjs: \"$actualjs\",
+  expectedjs: \"$expectedjs\",
+  expectedout: \"$expectedout\"
+},
+"
+      else
+        echo "input has errors"
+        echo $?
+      fi 
+    done
+    exit 0
+  ;;
+  check)
+    for file in $MATCHES; do
+       # output file is obtained from $file by replacing test/data/input/ with test/data/actualjs/ and .calc with .js
+      output=$(echo $file | sed 's/test\/data\/input/test\/data\/actualjs/' | sed 's/\.calc/\.js/')
+      bin/calc2js.mjs $file -o $output
+      # expected file is obtained from $file by replacing test/data/input/ with test/data/expectedjs/ and .calc with .js
+      expected=$(echo $file | sed 's/test\/data\/input/test\/data\/expectedjs/' | sed 's/\.calc/\.js/')
+      if [ -f $expected ]; then
+        if diff --color=auto $output $expected > /dev/null; then
+          echo "Files $output and $expected are the same"
+        else
+          echo "Files $output and $expected are different"
+          diff --color=auto $output $expected
+        fi
+      fi
+      echo "npx prettier $output | pygmentize -l js"
+      npx prettier $output | pygmentize -l js
+    done
+    exit 0
+    ;;
+  mocha)
+    # run only tests matching test<regexp>. 
+    #   Example: ✗ npm run mocha -- '-print'
+    npx mocha --grep "$1" test/test.mjs
+    exit 0
+    ;;
+  help)
+    echo "Usage: t.sh <command> <test-name>"
+    echo "  echo <test-name> - prints the contents of tests in test/data/input/<test.name>*calc"
+    echo "  ready <test-name> - For all matching tests f executes bin/calc2js.mjs test/data/input/f.calc -o test/data/expectedjs/f.js"
+    echo "  check <test-name> - For all matching files f executes the dff between the actual and expected"
+    echo "  mocha <regexp> - run only tests matching test<regexp>"
+    exit 0
+    ;;
+  *)
+    echo "Unknown command: $COMMAND"
+    ;;
+esac

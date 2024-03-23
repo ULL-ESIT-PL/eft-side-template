@@ -1,0 +1,5 @@
+f = fun(x) { fun(y) { x + y } },
+f(true)(3) = 8,    # 
+write(f(true)(3)), #  8 true has an equals method!
+write(f(true;4)),  # 5
+write(f(4)(true))  # 5

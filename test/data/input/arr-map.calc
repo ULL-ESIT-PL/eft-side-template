@@ -1,0 +1,4 @@
+a = [4; 3i; -i],
+print("a = "; a),               # a =  [ { re: 4, im: 0 }, { re: 0, im: 3 }, { re: -0, im: -1 } ]
+b = a("map")(fun(x) {x * x }), 
+print("b = "; b)                #  b =  [ { re: 16, im: 0 }, { re: -9, im: 0 }, { re: -1, im: 0 } ]

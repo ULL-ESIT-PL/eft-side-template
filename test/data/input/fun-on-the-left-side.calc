@@ -1,0 +1,6 @@
+f = fun(x) { fun(y) { x + y } },
+f(2)(3) = 8, # Constant folding lab for the future 0+1, 1*8
+write(f(2)(3)), #  8
+write(f(2)(5)), #  7
+write(f(3)(1)), #  4
+write(f(9)(2))  # 11

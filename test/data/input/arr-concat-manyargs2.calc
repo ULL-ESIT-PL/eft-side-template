@@ -1,0 +1,5 @@
+a = [4+2;5+3i;9-i],
+print("a = "; a),
+b = a("concat")([12; 13]),        # JS concat
+print("b is of length: "; b("length")),   # 5
+print("b = "; b)                          #  [ { re: 6, im: 0 }, { re: 5, im: 3 },    { re: 9, im: -1 }, { re: 12, im: 0 }, { re: 13, im: 0 } ]

@@ -1,0 +1,6 @@
+a = [4+2;5+3i;9-i],
+print(a(0)), # { re: 6, im: 0 }
+a(1) = 333,  
+print(a(1)), # { re: 333, im: 0 }
+print(a(9)), # null
+print(a)     #  { re: 6, im: 0 }, { re: 333, im: 0 }, { re: 9, im: -1 } ]
