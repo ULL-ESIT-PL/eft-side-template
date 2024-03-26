@@ -1,0 +1,7 @@
+obj = fun(x) { x },
+obj("name") = "John",
+obj("age") = 42,
+obj("greet") = fun(other) {
+    write("I am "+obj("name")+". Glad to meet you "+other)
+},
+obj("greet")("Juana")

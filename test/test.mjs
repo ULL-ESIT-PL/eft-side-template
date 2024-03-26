@@ -45,7 +45,7 @@ function removeDependencies(s) {
   return removeSpaces(pruned);
 }
 
-
+debugger;
 for (let i = 0; i < Test.length; i++) {
   it(`transpile(${Tst[i].input}, ${Tst[i].actualjs}) (No errors: ${Boolean(Tst[i].expectedout)})`, async () => {
 
@@ -63,10 +63,10 @@ for (let i = 0; i < Test.length; i++) {
         fs.copyFileSync(Test[i].actualjs, Test[i].expectedjs);
       }
     }
-    else {
-      let trimActualJS = removeDependencies(removeSpaces(actualjs))
-      console.log(trimActualJS)
-      let trimExpectedJS = removeDependencies(removeSpaces(expectedjs))
+    else { // remove dependencies first! then remove spaces
+      let trimActualJS = removeSpaces(removeDependencies(actualjs)) 
+      //console.log(trimActualJS)
+      let trimExpectedJS = removeSpaces(removeDependencies(expectedjs))
       assert.equal(trimActualJS, trimExpectedJS);
     }
 

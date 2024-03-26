@@ -1,0 +1,12 @@
+Person = fun(name; age) {
+    this = fun () { 0 },
+    this("name") = name,
+    this("greet") = fun(other) {
+      write("I am "+this("name")+". Glad to meet you "+other)
+    },
+    this("age") = age # this is not local to this function
+},
+john = Person("John"; 25),
+john("greet")("Juana"),
+thom = Person("Thom"; 78),
+thom("greet"; "Juana")

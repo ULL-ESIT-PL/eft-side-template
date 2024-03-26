@@ -6,8 +6,8 @@
  
   let $f;
 
-$f = function($y) {
-    return function($x) {
+$f = function($x) {
+    return function($y) {
         return $x.add($y);
     };
 }, print($f(Complex("2"))(Complex("3")));

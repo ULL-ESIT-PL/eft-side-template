@@ -1,0 +1,5 @@
+a = [4+2; 5+3i; 9-i; 13],
+b = a("splice")("length"),  # 2 
+b = a("splice")(2)(1),
+print(a), # [ { re: 6, im: 0 }, { re: 5, im: 3 }, { re: 13, im: 0 } ]
+print(b)  # [ { re: 9, im: -1 } ]

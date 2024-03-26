@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-  const { print, factorial, Complex } = require("/Users/casianorodriguezleon/campus-virtual/2324/pl2324/practicas/left-side/left-side-template/src/support-lib.js"); 
+  const { print, factorial, Complex } = require("/Users/casianorodriguezleon/campus-virtual/2324/pl2324/practicas/left-side/left-side-solution/src/support-lib.js"); 
   
 /* End of support code */
 

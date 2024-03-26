@@ -45,6 +45,42 @@ export default [
     expectedjs: "arr-expression.js",
     expectedout: "arr-expression-out.txt"
   },
+  { 
+    input: "arr-mul.calc",
+    actualjs: "arr-mul.js",
+    expectedjs: "arr-mul.js",
+    expectedout: "arr-mul-out.txt"
+  },
+  { 
+    input: "arr-div.calc",
+    actualjs: "arr-div.js",
+    expectedjs: "arr-div.js",
+    expectedout: "arr-div-out.txt"
+  },
+  { 
+    input: "arr-neg.calc",
+    actualjs: "arr-neg.js",
+    expectedjs: "arr-neg.js",
+    expectedout: "arr-neg-out.txt"
+  },
+  { 
+    input: "arr-tostring.calc",
+    actualjs: "arr-tostring.js",
+    expectedjs: "arr-tostring.js",
+    expectedout: "arr-tostring-out.txt"
+  },
+  { 
+    input: "arr-splice.calc",
+    actualjs: "arr-splice.js",
+    expectedjs: "arr-splice.js",
+    expectedout: "arr-splice-out.txt"
+  },
+  { 
+    input: "arr-splice-semicolon.calc",
+    actualjs: "arr-splice-semicolon.js",
+    expectedjs: "arr-splice-semicolon.js",
+    expectedout: "arr-splice-semicolon-out.txt"
+  },
   // funs on the left side
   { // left side of assignments with function modification f(1) = 2
     input: "fun.calc",
@@ -93,6 +129,25 @@ export default [
     actualjs: "fun-on-the-left-side-multiple.js",
     expectedjs: "fun-on-the-left-side-multiple.js",
     expectedout: "fun-on-the-left-side-multiple-out.txt"
+  },
+  // OOP and Classes
+  { 
+    input: "object-template.calc",
+    actualjs: "object-template.js",
+    expectedjs: "object-template.js",
+    expectedout: "object-template-out.txt"
+  },
+  { 
+    input: "object-template-semicolon.calc",
+    actualjs: "object-template-semicolon.js",
+    expectedjs: "object-template-semicolon.js",
+    expectedout: "object-template-semicolon-out.txt"
+  },
+  { 
+    input: "object-template-semicolon-2.calc",
+    actualjs: "object-template-semicolon-2.js",
+    expectedjs: "object-template-semicolon-2.js",
+    expectedout: "object-template-semicolon-2-out.txt"
   },
   // funs operations
   {

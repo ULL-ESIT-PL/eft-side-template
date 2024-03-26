@@ -1,9 +1,1 @@
 a =  [ { re: 6, im: 0 }, { re: 5, im: 3 }, { re: 9, im: -1 } ]
-b is of length:  5
-b =  [
-  { re: 6, im: 0 },
-  { re: 5, im: 3 },
-  { re: 9, im: -1 },
-  { re: 12, im: 0 },
-  { re: 13, im: 0 }
-]
