@@ -35,8 +35,9 @@ const min = function(a, b) {
 const print = (...x) => {
   
   x = x.map(s => {
-      if ((typeof s == "function") && s.array) { // shame on me!! make it a class
-        return s.array;
+      if (s?.constructor?.name == "ArrayFunction") { 
+        //console.log('array', s.array);
+        return s.toArray();
       }
       return s;
   });
@@ -50,6 +51,7 @@ const write = (...x) => {
   return r; 
 } 
 
+const { functionObject } = require('./function-object.js');
 const { assign } = require('./assign.js');
 
 module.exports = {
@@ -60,4 +62,6 @@ module.exports = {
   max,
   min,
   assign,
+  functionObject,
+  deb
 };

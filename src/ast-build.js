@@ -155,7 +155,23 @@ function buildLogicalExpression(left, operator, right) {
 
 // See for instance: compast -jp 'x => { return x }' | jq '.body[0].expression'
 function buildArrowFunctionExpression(params, body) {
-  // fill it if needed
+  return {
+    type: "ArrowFunctionExpression",
+    id: null,
+    params: params,
+    body: {
+      type: "BlockStatement",
+      body: [
+        {
+          type: "ReturnStatement",
+          argument: body
+        }
+      ]
+    },
+    generator: false,
+    expression: true,
+    async: false
+  };
 }
 
 function buildFunctionExpression(params, exp) {
@@ -167,6 +183,10 @@ function buildWhileExpression(test, body) {
 }
 
 function buildForExpression(init, test, update, body) {
+// fill it
+}
+
+function buildIfExpression(test, consequent, alternate) {
   // fill it
 }
 
@@ -179,6 +199,7 @@ module.exports = {
   buildFunctionExpression,
   buildIdentifier,
   buildIdentifierOrCalls,
+  buildIfExpression,
   buildLiteral,
   buildLogicalExpression,
   buildMax,

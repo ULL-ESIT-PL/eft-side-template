@@ -1,2 +1,2 @@
 f = fun(x) { fun() { print(x) } },
-f(4)()
+f(4)() # { re: 4, im: 0 }

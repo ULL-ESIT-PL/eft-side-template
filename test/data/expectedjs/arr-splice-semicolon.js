@@ -6,10 +6,10 @@
  
   let $a, $b;
 
-((($a = arr(
+(($a = arr(
     Complex("4").add(Complex("2")),
     Complex("5").add(Complex("3i")),
     Complex("9").sub(Complex("i")),
     Complex("13")
-), $b = $a("splice")("length")), $b = $a("splice")(Complex("2"))(Complex("1"))), print($a)), print($b);
+), $b = $a("splice")(Complex("2"))(Complex("1"))()), print($a)), print($b);
   

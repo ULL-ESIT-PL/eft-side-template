@@ -1,0 +1,17 @@
+a = 4,
+b = 5,
+f = fun (a; b) {
+    if a < b { 
+        write(a;" < ";b)
+    },
+    if (a == b) {
+      write(a;" = ";b)
+    },
+    if (b > a) {
+      write(b;" > ";a)
+    }
+},
+f(a; b),
+f(b; a),
+b = a,
+f(a; b)

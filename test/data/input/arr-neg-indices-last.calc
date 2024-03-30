@@ -1,0 +1,7 @@
+a = [4; [5; 9]],
+print(a(-1)),            # [ { re: 5, im: 0 }, { re: 9, im: 0 } ]
+a(1)(-1) = 0,
+print(a(1)),             # [ { re: 5, im: 0 }, { re: 0, im: 0 } ]
+print(a),                /* [ { re: 4, im: 0 }, [ { re: 5, im: 0 }, { re: 0, im: 0 } ] ] */
+print(a("push")(2;3)()), # 4 (length of a) Remember: all array methods must be called with () at the end!
+print(a)                 # [  { re: 4, im: 0 },  [ { re: 5, im: 0 }, { re: 0, im: 0 } ],  { re: 2, im: 0 },  { re: 3, im: 0 } ]

@@ -1,4 +1,4 @@
-a = "hello",
+a = "hello", # this test is future work!!
 b = a(0),
 print(a(0)),
 print(a)

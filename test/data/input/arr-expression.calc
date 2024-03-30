@@ -1,3 +1,4 @@
 b = ([4; 3i; -i])(0), 
-print("b = "; b),         # b =  { re: 4, im: 0 } 
-print(([4; 3i; -i])(-2))  # null
+print("b = "; b),          # b =  { re: 4, im: 0 } 
+print(([4; 3i; -i])(-2)),  # { re: 0, im: 3 }
+print(([4; 3i; -i])(9))    # null

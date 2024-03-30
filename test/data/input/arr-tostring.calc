@@ -1,3 +1,3 @@
 a = [1;2;3]+"hello",
 print(a), # [ '1hello', '2hello', '3hello' ]
-print(a("join")(",")) # 1hello,2hello,3hello
+print(a("join")(",")()) # 1hello,2hello,3hello

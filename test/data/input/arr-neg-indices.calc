@@ -1,0 +1,6 @@
+a = [4; [5; 9]; fun(x;y) { x+y }],
+print(a(-2)),        # [ { re: 5, im: 0 }, { re: 9, im: 0 } ]
+a(1)(0) = 0,
+print(a(1)),        # [ { re: 0, im: 0 }, { re: 9, im: 0 } ]
+print(a(-1)(3; 7)), # { re: 10, im: 0 }
+print(a)            /* [ { re: 4, im: 0 }, [ { re: 0, im: 0 }, { re: 9, im: 0 } ],  [Function (anonymous)] ] */

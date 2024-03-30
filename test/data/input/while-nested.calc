@@ -3,10 +3,10 @@ b = while a < 3 {
   print(a),
   d = 0,
   c = while d < a {
-    print(d),
+    print("  ";d),
     d = d +1
   },
-  print(c),
+  print("  ";c),
   a = a +1
 },
 print(b) 

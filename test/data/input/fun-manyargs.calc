@@ -1,4 +1,4 @@
 f = fun(x;y) {
   x+y
 },
-print(f(2;3))
+print(f(2;3)) # { re: 5, im: 0 }

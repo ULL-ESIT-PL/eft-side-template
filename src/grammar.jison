@@ -17,7 +17,8 @@ const {
   buildLogicalExpression,
   buildParOrCallExpression,
   buildWhileExpression,
-  buildForExpression
+  buildForExpression,
+  buildIfExpression,
 } = require('./ast-build');
 // Prefix with '$'' all user input variables to avoid collisions with our own compiler variables
 const {$} = require('./utils.js')
@@ -63,12 +64,13 @@ e:
   | FALSE               { $$ = buildLiteral(false); }
   | STRING              { $$ = buildLiteral($STRING); }
   | WHILE e '{' e '}'   { $$ = buildWhileExpression($e1, $e2); }
+  | IF  e '{' e '}' optElse { $$ = buildIfExpression($e1, $e2, $optElse); }
   | FOR '(' e ';'  e ';'  e ')'  '{' e '}'   
                         { $$ = buildForExpression($e1, $e2, $e3, $e4); }
   | PID '(' eListEmpty ')'   { $$ = buildCallExpression($PID, $eListEmpty, true); }
   | ID  apply           { $$ = buildParOrCallExpression(buildIdentifier($($ID)), $apply); }
   | FUN '(' idListEmpty ')' '{' e '}'   
-                        { $$ = buildFunctionExpression($idListEmpty, $e); } 
+                        { $$ = buildFunctionExpression($idListEmpty.reverse(), $e); } 
 ;
 
 apply:
@@ -78,18 +80,21 @@ apply:
 ;
 
 idList:
-  // fill it
+  // fill the rules
 ;
 
 idListEmpty:
-  // fill it
+  // fill the rules
 ;
 
 eList:
-  // fill it
+  // fill the rules
 ;
 
 eListEmpty:
-    /* empty */      { $$ = []; }
-  | eList            { $$ = $eList; }
+  // fill the rules
+;
+
+optElse:
+  // fill the rules
 ;

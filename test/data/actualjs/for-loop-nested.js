@@ -14,7 +14,7 @@
             let result = false;
 
             for ($b = Complex("0"); $b.lessThan($a); $b = $b.add(Complex("1"))) {
-                result = print($b);
+                result = print("  ", $b);
             }
 
             return result;

@@ -1,20 +1,22 @@
 #!/usr/bin/env node
-  const { Complex, assign, write } = require("/Users/casianorodriguezleon/campus-virtual/2223/pl2223/practicas/functions/functions-solution/src/support-lib.js"); 
+  const { functionObject, Complex, assign, write, print } = require("/Users/casianorodriguezleon/campus-virtual/2324/pl2324/practicas/left-side/left-side-solution/src/support-lib.js"); 
   
 /* End of support code */
 
  
   let $Person, $john, $thom;
 
-((($Person = function($name) {
-    return function($age) {
+((((($Person = functionObject(function($name) {
+    return functionObject(function($age) {
         let $this;
 
-        return (($this = function() {
+        return ((($this = functionObject(function() {
             return Complex("0");
-        }, $this = assign($this, ["name"], $name, 0)), $this = assign($this, ["greet"], function($other) {
+        }), assign($this, ["name"], $name, 0)), assign($this, ["age"], $age, 0)), assign($this, ["greet"], functionObject(function($other) {
             return write("I am ".add($this("name")).add(". Glad to meet you ").add($other));
-        }, 0)), $this = assign($this, ["age"], $age, 0);
-    };
-}, $john = $Person("John")(Complex("25"))), $john("greet")("Juana")), $thom = $Person("Thom")(Complex("78"))), $thom("greet")("Juana");
+        }), 0)), assign($this, ["setAge"], functionObject(function($newAge) {
+            return write($newAge), assign($this, ["age"], $newAge, 0);
+        }), 0);
+    });
+}), $john = $Person("John")(Complex("25"))), $john("greet")("Juana")), $thom = $Person("Thom")(Complex("78"))), $thom("greet")("Juana")), $thom("setAge")($thom("age").add(Complex("1")))), print($thom("age"));
   

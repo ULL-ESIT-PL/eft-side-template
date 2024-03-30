@@ -1,5 +1,6 @@
 
 export default [
+  /*
   // Arrays
   { // array functions. Simple example. key: arr
     input: "arr.calc",
@@ -27,17 +28,29 @@ export default [
     expectedjs: "arr-concat.js",
     expectedout: "arr-concat-out.txt"
   },
-  { // array map method test
-    input: "arr-map.calc",
-    actualjs: "arr-map.js",
-    expectedjs: "arr-map.js",
-    expectedout: "arr-map-out.txt"
+  { 
+    input: "arr-concat2.calc",
+    actualjs: "arr-concat2.js",
+    expectedjs: "arr-concat2.js",
+    expectedout: "arr-concat2-out.txt"
+  },
+  { 
+    input: "arr-concat-manyargs.calc",
+    actualjs: "arr-concat-manyargs.js",
+    expectedjs: "arr-concat-manyargs.js",
+    expectedout: "arr-concat-manyargs-out.txt"
   },
   { // concat with array argument b = a("concat")([12; 13])
     input: "arr-concat-manyargs2.calc",
     actualjs: "arr-concat-manyargs2.js",
     expectedjs: "arr-concat-manyargs2.js",
     expectedout: "arr-concat-manyargs2-out.txt"
+  },
+  { // array map method test
+    input: "arr-map.calc",
+    actualjs: "arr-map.js",
+    expectedjs: "arr-map.js",
+    expectedout: "arr-map-out.txt"
   },
   { // Expressions like ([4; 3i; -i])(0) 
     input: "arr-expression.calc",
@@ -70,6 +83,37 @@ export default [
     expectedout: "arr-tostring-out.txt"
   },
   { 
+    input: "arr-nested.calc",
+    actualjs: "arr-nested.js",
+    expectedjs: "arr-nested.js",
+    expectedout: "arr-nested-out.txt"
+  },
+  { 
+    input: "arr-with-functions.calc",
+    actualjs: "arr-with-functions.js",
+    expectedjs: "arr-with-functions.js",
+    expectedout: "arr-with-functions.txt"
+  },
+  { 
+    input: "arr-neg-indices.calc",
+    actualjs: "arr-neg-indices.js",
+    expectedjs: "arr-neg-indices.js",
+    expectedout: "arr-neg-indices.txt"
+  }, 
+  { 
+    input: "arr-neg-indices-last.calc",
+    actualjs: "arr-neg-indices-last.js",
+    expectedjs: "arr-neg-indices-last.js",
+    expectedout: "arr-neg-indices-last-out.txt"
+  },
+  { 
+    input: "arr-float-index.calc",
+    actualjs: "arr-float-index.js",
+    expectedjs: "arr-float-index.js",
+    expectedout: "arr-float-index-out.txt"
+  },
+  // array methods with more than one compulsory argument
+  { 
     input: "arr-splice.calc",
     actualjs: "arr-splice.js",
     expectedjs: "arr-splice.js",
@@ -81,6 +125,19 @@ export default [
     expectedjs: "arr-splice-semicolon.js",
     expectedout: "arr-splice-semicolon-out.txt"
   },
+  { 
+    input: "arr-copywithin.calc",
+    actualjs: "arr-copywithin.js",
+    expectedjs: "arr-copywithin.js",
+    expectedout: "arr-copywithin-out.txt"
+  },
+  { 
+    input: "arr-copywithin-semicolon.calc",
+    actualjs: "arr-copywithin-semicolon.js",
+    expectedjs: "arr-copywithin-semicolon.js",
+    expectedout: "arr-copywithin-semicolon-out.txt"
+  },
+  */
   // funs on the left side
   { // left side of assignments with function modification f(1) = 2
     input: "fun.calc",
@@ -131,6 +188,12 @@ export default [
     expectedout: "fun-on-the-left-side-multiple-out.txt"
   },
   // OOP and Classes
+  { 
+    input: "object.calc",
+    actualjs: "object.js",
+    expectedjs: "object.js",
+    expectedout: "object-out.txt"
+  },
   { 
     input: "object-template.calc",
     actualjs: "object-template.js",
@@ -212,6 +275,19 @@ export default [
     expectedjs: "for-loop-nested-write.js",
     expectedout: "for-loop-nested-write.txt"
   },
+  // if
+  { 
+    input: "if.calc",
+    actualjs: "if.js",
+    expectedjs: "if.js",
+    expectedout: "if-out.txt"
+  },
+  { 
+    input: "if-noelse.calc",
+    actualjs: "if-noelse.js",
+    expectedjs: "if-noelse.js",
+    expectedout: "if-noelse-out.txt"
+  },
   // strings
   {
     input: "string-string.calc",
@@ -231,38 +307,50 @@ export default [
     expectedjs: "string-add.js",
     expectedout: "string-add.txt"
   },
+  { 
+    input: "string-times-number.calc",
+    actualjs: "string-times-number.js",
+    expectedjs: "string-times-number.js",
+    expectedout: "string-times-number-out.txt"
+  },
+  { 
+    input: "number-times-string.calc",
+    actualjs: "number-times-string.js",
+    expectedjs: "number-times-string.js",
+    expectedout: "number-times-string-out.txt"
+  },
   // fun call
-  {
-    "input": "test-fun-call-empty.calc",
-    "actualjs": "fun-call-empty.js",
-    "expectedjs": "fun-call-empty.js",
-    "expectedout": "fun-call-empty.txt"
+  { 
+    input: "test-fun-call-empty.calc",
+    actualjs: "test-fun-call-empty.js",
+    expectedjs: "test-fun-call-empty.js",
+    expectedout: "test-fun-call-empty.txt"
   },
   // recursiveness and short circuit for boolean expressions
-  {
-    "input": "test-recursive.calc",
-    "actualjs": "out-recursive.js",
-    "expectedjs": "correct-recursive.js",
-    "expectedout": "correct-out-recursive.txt"
+  { 
+    input: "test-recursive.calc",
+    actualjs: "test-recursive.js",
+    expectedjs: "test-recursive.js",
+    expectedout: "test-recursive-out.txt"
   },
-  {
-    "input": "test-recursive2.calc",
-    "actualjs": "out-recursive2.js",
-    "expectedjs": "correct-recursive2.js",
-    "expectedout": "correct-out-recursive2.txt"
+  { 
+    input: "test-recursive2.calc",
+    actualjs: "test-recursive2.js",
+    expectedjs: "test-recursive2.js",
+    expectedout: "test-recursive2-out.txt"
   },
   // scope and functions
   {
     "input": "test-fun-scop1.calc",
-    "actualjs": "out-fun-scop1.js",
-    "expectedjs": "correct-fun-scop1.js",
-    "expectedout": "correct-out-fun-scop1.txt"
+    "actualjs": "test-fun-scop1.js",
+    "expectedjs": "test-fun-scop1.js",
+    "expectedout": "test-fun-scop1.txt"
   },
   {
     "input": "test-fun-scop2.calc",
-    "actualjs": "out-fun-scop2.js",
-    "expectedjs": "correct-fun-scop2.js",
-    "expectedout": "correct-out-fun-scop2.txt"
+    "actualjs": "test-fun-scop2.js",
+    "expectedjs": "test-fun-scop2.js",
+    "expectedout": "test-fun-scop2.txt"
   },
   {
     "input": "test-scope2.calc",

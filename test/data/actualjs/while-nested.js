@@ -14,11 +14,11 @@
             let result = false;
 
             while ($d.lessThan($a)) {
-                result = (print($d), $d = $d.add(Complex("1")));
+                result = (print("  ", $d), $d = $d.add(Complex("1")));
             }
 
             return result;
-        })()), print($c)), $a = $a.add(Complex("1")));
+        })()), print("  ", $c)), $a = $a.add(Complex("1")));
     }
 
     return result;

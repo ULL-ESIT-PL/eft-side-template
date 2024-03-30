@@ -1,0 +1,8 @@
+[ { re: 5, im: 0 }, { re: 9, im: 0 } ]
+[ { re: 0, im: 0 }, { re: 9, im: 0 } ]
+{ re: 10, im: 0 }
+[
+  { re: 4, im: 0 },
+  [ { re: 0, im: 0 }, { re: 9, im: 0 } ],
+  [Function: _call] FunctionObject { function: [Function (anonymous)] }
+]

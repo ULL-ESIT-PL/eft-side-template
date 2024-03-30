@@ -5,5 +5,5 @@
 
  
   let $b;
-($b = arr(Complex("4"), Complex("3i"), Complex("i").neg())(Complex("0")), print("b = ", $b)), print(arr(Complex("4"), Complex("3i"), Complex("i").neg())(Complex("2").neg()));
+(($b = arr(Complex("4"), Complex("3i"), Complex("i").neg())(Complex("0")), print("b = ", $b)), print(arr(Complex("4"), Complex("3i"), Complex("i").neg())(Complex("2").neg()))), print(arr(Complex("4"), Complex("3i"), Complex("i").neg())(Complex("9")));
   

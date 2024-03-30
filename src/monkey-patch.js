@@ -60,7 +60,15 @@ booleanHandler.default = functionHandler.default = function (op, other) {
 
 let stringHandler = Object.create(null); // no prototype
 
-stringHandler.default = function (op, other) {
+String.prototype.mul = function (other) {
+  // fill it
+}
+
+String.prototype.neg = function () {
+  return [...this].reverse().join('')
+}
+
+String.prototype.add = function (other) {
   return this + other.toString()
 }
 
@@ -78,9 +86,6 @@ for (let op in Operators) {
     Function.prototype[op] = function (other) {
       return functionHandler[typeof other]?.call(this, op, other) || functionHandler.default.call(this, op, other)
     };
-    String.prototype[op] = function (other) {
-      return stringHandler.default.call(this, op, other)
-    }
   }
 
 }

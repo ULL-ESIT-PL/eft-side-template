@@ -7,9 +7,9 @@ const codeGen = require('./code-generation.js')
 const writeCode = require('./write-code.js');
 
 module.exports = async function transpile(inputFile, outputFile) {
-  let input = await fs.readFile(inputFile, 'utf-8')
-  let ast;
+  let input, ast;
   try {
+    input = await fs.readFile(inputFile, 'utf-8')
     ast = p.parse(input);
   } catch (e) {
     let m = e.message

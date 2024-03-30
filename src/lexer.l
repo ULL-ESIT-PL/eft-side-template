@@ -1,5 +1,5 @@
 %{
-const reservedWords = ["fun", "true", "false", "while", "for", "i"]  
+const reservedWords = ["fun", "true", "false", "while", "for", "if", "else", "i"]  
 const predefinedIds = ["print", "write" ]
 
 function removeQuotes(s) {
@@ -7,7 +7,6 @@ function removeQuotes(s) {
 }
 
 const idOrReserved = text => {
-                 //console.log(reservedWords);
                  if (reservedWords.find(w => w == text)) return text.toUpperCase();
                  if (predefinedIds.find(w => w == text)) return 'PID';
                  return 'ID';

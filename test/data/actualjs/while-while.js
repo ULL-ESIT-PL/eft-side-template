@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-  const { Complex, print } = require("/Users/casianorodriguezleon/campus-virtual/2324/pl2324/practicas/left-side/left-side-solution/src/support-lib.js"); 
+  const { write, Complex, print } = require("/Users/casianorodriguezleon/campus-virtual/2324/pl2324/practicas/left-side/left-side-solution/src/support-lib.js"); 
   
 /* End of support code */
 
  
   let $a, $b;
 
-((($a = Complex("0"), $b = (() => {
+(((((write("Counting from 0 to 10"), $a = Complex("0")), $b = (() => {
     let result = false;
 
     while ($a.lessThan(Complex("10"))) {
@@ -14,7 +14,7 @@
     }
 
     return result;
-})()), print($b)), $b = (() => {
+})()), print($b)), write("Counting towards 0")), $b = (() => {
     let result = false;
 
     while ($a.greaterThan(Complex("0"))) {

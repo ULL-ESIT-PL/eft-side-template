@@ -55,6 +55,7 @@ const scopeAnalysis = (dAst) => {
       const node = path.node;
       if (node.left.type === "Identifier") {
         let name = node.left.name;
+        let right = node.right;
         if (name && /^[$]/.test(name) && !scope.has(name)) {
           // If not the name of a support function, mark as initialized/declared in current scope
           if (!dAst.dependencies.has(name)) {

@@ -5,5 +5,5 @@
 
  
   let $a;
-($a = arr(Complex("1"), Complex("2"), Complex("3")).add("hello"), print($a)), print($a("join")(","));
+($a = arr(Complex("1"), Complex("2"), Complex("3")).add("hello"), print($a)), print($a("join")(",")());
   

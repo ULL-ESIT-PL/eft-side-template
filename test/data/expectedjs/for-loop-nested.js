@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-  const { Complex, print } = require("/Users/casianorodriguezleon/campus-virtual/2223/pl2223/practicas/functions/functions-solution/src/support-lib.js"); 
+  const { Complex, print } = require("/Users/casianorodriguezleon/campus-virtual/2324/pl2324/practicas/left-side/left-side-solution/src/support-lib.js"); 
   
 /* End of support code */
 
@@ -14,7 +14,7 @@
             let result = false;
 
             for ($b = Complex("0"); $b.lessThan($a); $b = $b.add(Complex("1"))) {
-                result = print($b);
+                result = print("  ", $b);
             }
 
             return result;

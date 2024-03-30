@@ -1,0 +1,12 @@
+Person = fun(name; age) {
+    this = fun (x) { x },
+    this("name") = name,
+    this("age") = age, # this is not local to this function
+
+    this("setAge") = fun(newAge) {
+      this("age") = newAge # if it is a setter changes the reference to the object
+    }
+},
+thom = Person("Thom"; 78),
+thom("setAge")(80),
+write(thom("name"); "is"; thom("age"))

@@ -7,7 +7,7 @@
 #   # executes 
     # if bin/calc2js.mjs test/data/input/test"$1".calc -o test/data/expectedjs/correct"$1".js; then
     # and then executes
-    # node test/data/expectedjs/correct"$1".js > test/data/expectedout/correct-out"$1".txt
+    # node test/data/expectedjs/correct"$1".js > test/data/expectedout/correct"$1".txt
     #if there are errors echoes the errors
 # t.sh check test-name
 #   # executes check.sh test-name
@@ -37,7 +37,18 @@ case $COMMAND in
       exit 1
     fi
     for file in $MATCHES; do
-      echo File: $file
+      stat=""
+      # Check if file appears with an entry like "input: \"$file\"," in test/test-description.mjs
+      # set variable name to the basename of file
+      name=$(basename $file)
+      # if grep $name test/test-description.mjs is true then echo "found in test-description.mjs" 
+      if grep $name test/test-description.mjs > /dev/null; then
+        stat="found in tests "
+      fi
+      if grep $name test/test-error-description.js > /dev/null; then
+        stat="${stat}used to test errors"
+      fi
+      echo File: $file $stat
       cat -n $file
       echo
     done
@@ -49,8 +60,8 @@ case $COMMAND in
       output=$(echo $file | sed 's/test\/data\/input/test\/data\/expectedjs/' | sed 's/\.calc/\.js/') 
       echo "bin/calc2js.mjs $file -o $output"
       if bin/calc2js.mjs $file -o $output; then
-        # output text file is obtained from $file by replacing test/data/input/ with test/data/expectedout/ and .calc with -out.txt
-        outputTxt=$(echo $file | sed 's/test\/data\/input/test\/data\/expectedout/' | sed 's/\.calc/-out.txt/')
+        # output text file is obtained from $file by replacing test/data/input/ with test/data/expectedout/ and .calc with .txt
+        outputTxt=$(echo $file | sed 's/test\/data\/input/test\/data\/expectedout/' | sed 's/\.calc/.txt/')
         echo "node $output > $outputTxt"
         node $output > $outputTxt
         echo "Now add an entry for $MATCHES in 'test/test-description.mjs' like this one:"
@@ -59,7 +70,7 @@ case $COMMAND in
         # actualjs file is obtained from $file by replacing test/data/input/ with the empty string and .calc with .js
         actualjs=$(echo $file | sed 's/test\/data\/input\///' | sed 's/\.calc/\.js/')
         expectedjs=$(echo $file | sed 's/test\/data\/input\///' | sed 's/\.calc/\.js/')
-        expectedout=$(echo $file | sed 's/test\/data\/input\///' | sed 's/\.calc/-out.txt/')
+        expectedout=$(echo $file | sed 's/test\/data\/input\///' | sed 's/\.calc/.txt/')
         echo "
 { 
   input: \"$inputFile\",
