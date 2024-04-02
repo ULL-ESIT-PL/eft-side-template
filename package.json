@@ -14,7 +14,6 @@
     "test-boolean": "npm run compile && mocha  test/test-boolean.mjs",
     "test-call": "npm run compile && mocha  test/test-call.mjs",
     "test-conditional": "npm run compile && mocha  test/test-conditional.mjs",
-    "test-description": "npm run compile && mocha  test/test-description.mjs",
     "test-fun-on-the-left": "npm run compile && mocha  test/test-fun-on-the-left.mjs",
     "test-fun-operation": "npm run compile && mocha  test/test-fun-operation.mjs",
     "test-loops": "npm run compile && mocha  test/test-loops.mjs",
