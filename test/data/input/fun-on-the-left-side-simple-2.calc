@@ -1,4 +1,4 @@
 f = fun(x) { x + 1 },
 f(0) = 8, # Constant folding lab for the future 0+1, 1*8
 write(f(0)), # 8
-write(f(1)), # 2
+write(f(1))  # 2

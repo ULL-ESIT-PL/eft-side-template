@@ -1,0 +1,6 @@
+f = fun(x) { fun(y) { x + y } },
+f(2; 3) = 8, # Same as f(2)(3)
+write(f(2)(3)), #  8
+write(f(2)(5)), #  7
+write(f(2)(3))  #  8
+

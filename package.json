@@ -1,15 +1,29 @@
 {
-  "name": "scope-intro",
-  "version": "1.0.0",
-  "description": "A lab for PL. Intro to Scope Analysis",
+  "name": "@ull-esit-pl/left-side",
+  "version": "1.1.0",
+  "description": "A lab for PL. Extending assignments for partial function modification",
   "main": "src/transpile.js",
   "bin": {
-    "calc2js": "./bin/calc2js.js"
+    "calc2js": "./bin/calc2js.mjs"
   },
   "scripts": {
     "test": "npm run test-pass; npm run test-err",
     "test-pass": "npm run compile && mocha test/test.mjs",
     "test-err": "npm run compile && mocha test/test-error.js",
+    "test-array": "npm run compile && mocha  test/test-array.mjs",
+    "test-boolean": "npm run compile && mocha  test/test-boolean.mjs",
+    "test-call": "npm run compile && mocha  test/test-call.mjs",
+    "test-conditional": "npm run compile && mocha  test/test-conditional.mjs",
+    "test-description": "npm run compile && mocha  test/test-description.mjs",
+    "test-fun-on-the-left": "npm run compile && mocha  test/test-fun-on-the-left.mjs",
+    "test-fun-operation": "npm run compile && mocha  test/test-fun-operation.mjs",
+    "test-loops": "npm run compile && mocha  test/test-loops.mjs",
+    "test-manyargs": "npm run compile && mocha  test/test-manyargs.mjs",
+    "test-objects": "npm run compile && mocha  test/test-objects.mjs",
+    "test-operations": "npm run compile && mocha  test/test-operations.mjs",
+    "test-recursive": "npm run compile && mocha  test/test-recursive.mjs",
+    "test-scope": "npm run compile && mocha  test/test-scope.mjs",
+    "test-string": "npm run compile && mocha  test/test-string.mjs",
     "cov": "c8 --reporter=html -o docs -x src/support-lib.js npm run test",
     "compile": "jison src/grammar.jison src/lexer.l -o src/calc.js",
     "clean": "rm -f src/calc.js; rm -fR coverage",
@@ -27,6 +41,9 @@
   ],
   "author": "Casiano Rodriguez Leon <crguezl@ull.edu.es> (https://crguezl.github.io/)",
   "license": "ISC",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "dependencies": {
     "ast-types": "^0.14.2",
     "c8": "^9.1.0",
@@ -37,6 +54,7 @@
     "dotenv": "^16.4.5",
     "jison": "^0.4.18",
     "recast": "^0.22.0",
+    "@tinkoff/utils": "^2.6.2",
     "set-operations": "^2.0.2",
     "shelljs.exec": "^1.1.8"
   },
