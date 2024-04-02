@@ -34,15 +34,7 @@ const min = function(a, b) {
 
 const print = (...x) => {
   
-  x = x.map(s => {
-      if (s?.constructor?.name == "ArrayFunction") { 
-        //console.log('array', s.array);
-        return s.toArray();
-      }
-      return s;
-  });
-  
-  console.log(...x); 
+  // fill it
   return x; 
 } 
 const write = (...x) => { 
