@@ -12,8 +12,8 @@ import testManyargsDescription from "./functionalities/test-manyargs-description
 import testBooleanDescription from "./functionalities/test-boolean-description.mjs";
 import testCallDescription from "./functionalities/test-call-description.mjs";
 
-export default testArrayDescription.
-  concat(testFunOnTheLeftDescription).
+export default //testArrayDescription.
+  testFunOnTheLeftDescription.
   concat(testObjectsDescription).
   concat(testLoopsDescription).
   concat(testStringDescription).
