@@ -1,0 +1,23 @@
+name: GoRace Workflow
+
+on:
+  - push
+  - workflow_dispatch
+
+permissions:
+  checks: write
+  actions: read
+  contents: read
+
+jobs:
+  build:
+    name: Autograding
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ULL-GORACE-TEST/autograding@v1
+        with:
+          activity: "left-side"
+          assigmentId: 582879
+          race: "PLULL24"

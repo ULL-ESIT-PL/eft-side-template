@@ -1,0 +1,88 @@
+{
+  "tests": [
+    {
+      "name": "[FUND] boolean",
+      "setup": "npm install",
+      "run": "npm run test-boolean",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "[FUND] call",
+      "setup": "npm install",
+      "run": "npm run test-call",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "[COND] conditional",
+      "setup": "npm install",
+      "run": "npm run test-conditional",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "[FUNLEFT] fun-on-the-left",
+      "setup": "npm install",
+      "run": "npm run test-fun-on-the-left",
+      "timeout": 10,
+      "points": 3
+    },
+    {
+      "name": "[FUND] fun-operation",
+      "setup": "npm install",
+      "run": "npm run test-fun-operation",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "[FUND] loops",
+      "setup": "npm install",
+      "run": "npm run test-loops",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "[MAN] manyargs",
+      "setup": "npm install",
+      "run": "npm run test-manyargs",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "[OBJ] objects",
+      "setup": "npm install",
+      "run": "npm run test-objects",
+      "timeout": 10,
+      "points": 2
+    },
+    {
+      "name": "[FUND] operations",
+      "setup": "npm install",
+      "run": "npm run test-operations",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "[FUND] recursive",
+      "setup": "npm install",
+      "run": "npm run test-recursive",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "[FUND] scope",
+      "setup": "npm install",
+      "run": "npm run test-scope",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "[FUND] string",
+      "setup": "npm install",
+      "run": "npm run test-string",
+      "timeout": 10,
+      "points": 1
+    }
+  ]
+}
